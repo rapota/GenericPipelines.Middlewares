@@ -1,13 +1,10 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: CI build
+name: NuGet deploy
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -26,8 +23,5 @@ jobs:
       run: dotnet test --no-build --configuration Release --verbosity normal src/GenericPipelines.Middlewares.sln
     - name: Create the package
       run: dotnet pack --configuration Release --output out -p:Version=${{vars.NUGET_PACKAGE_VERSION}} src/GenericPipelines.Middlewares
-    - name: Upload package
-      uses: actions/upload-artifact@v4.6.2
-      with:
-        name: nuget-package
-        path: out
+    - name: Publish the package
+      run: dotnet nuget push out/*.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
