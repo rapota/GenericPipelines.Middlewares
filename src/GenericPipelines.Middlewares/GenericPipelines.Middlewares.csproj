@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>GenericPipelines</RootNamespace>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <LangVersion>latest</LangVersion>
+
+    <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
+
+    <PackageId>Lesyk.GenericPipelines.Middlewares</PackageId>
+    <Authors>Lesyk</Authors>
+    <Company>Oleksandr</Company>
+    <PackageProjectUrl>https://github.com/rapota/GenericPipelines.Middlewares</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rapota/GenericPipelines.Middlewares</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>
