@@ -17,6 +17,15 @@
     <PackageProjectUrl>https://github.com/rapota/GenericPipelines.Middlewares</PackageProjectUrl>
     <RepositoryUrl>https://github.com/rapota/GenericPipelines.Middlewares</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Common types for Lesyk.GenericPipelines package.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
