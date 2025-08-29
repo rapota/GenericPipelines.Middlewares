@@ -10,7 +10,10 @@
     <LangVersion>latest</LangVersion>
 
     <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
+  </PropertyGroup>
 
+  <!-- NuGet Package (.nupkg) -->
+  <PropertyGroup>
     <PackageId>Lesyk.GenericPipelines.Middlewares</PackageId>
     <Authors>Lesyk</Authors>
     <Company>Oleksandr</Company>
@@ -20,6 +23,12 @@
     <Description>Common types for Lesyk.GenericPipelines package.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <!-- Symbol package (.snupkg) -->
+  <PropertyGroup>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>  
 
   <ItemGroup>
     <None Include="..\..\README.md">
