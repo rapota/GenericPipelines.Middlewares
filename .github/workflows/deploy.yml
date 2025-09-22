@@ -16,11 +16,11 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore src/GenericPipelines.Middlewares.sln
+      run: dotnet restore src/GenericPipelines.Middlewares.slnx
     - name: Build
-      run: dotnet build --no-restore --configuration Release src/GenericPipelines.Middlewares.sln
+      run: dotnet build --no-restore --configuration Release src/GenericPipelines.Middlewares.slnx
     - name: Test
-      run: dotnet test --no-build --configuration Release --verbosity normal src/GenericPipelines.Middlewares.sln
+      run: dotnet test --no-build --configuration Release --verbosity normal src/GenericPipelines.Middlewares.slnx
     - name: Create the package
       run: dotnet pack --configuration Release --output out -p:Version=${{vars.NUGET_PACKAGE_VERSION}} src/GenericPipelines.Middlewares
     - name: Publish the package

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="GenericPipelines.Middlewares.Tests/GenericPipelines.Middlewares.Tests.csproj" />
+  <Project Path="GenericPipelines.Middlewares/GenericPipelines.Middlewares.csproj" />
+</Solution>
